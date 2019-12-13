@@ -49,24 +49,28 @@ Ethereum **address** of NFT smart contract
 must have following keys `to_address, name, description, image_url, background_color`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="to\_address" type="string" required=false %}
+{% api-method-parameter name="to\_address" type="string" required=true %}
 Receiver Ethereum address of minting NFT
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="name" type="string" required=false %}
+{% api-method-parameter name="name" type="string" required=true %}
 Name of NFT \(single line\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="description" type="string" required=false %}
+{% api-method-parameter name="description" type="string" required=true %}
 Description of NFT, supporting line  breaks
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="image\_url" type="string" required=false %}
+{% api-method-parameter name="image\_url" type="string" required=true %}
 Valid image url of NFT
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="background " type="string" required=true %}
+{% api-method-parameter name="background_color" type="string" required=true %}
 6-digit color code \(e.g. FFFFFF\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="attributes_map" type="object" required=true %}
+Property of minting NFT
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -153,8 +157,7 @@ Minting NFT request is successfully retrieved and ready to go on blockchain
             }
         }
     ],
-    "ok": true,
-    "total_count": 17
+    "ok": true
 }
 ```
 {% endapi-method-response-example %}
@@ -203,14 +206,17 @@ curl --location --request POST "{{host}}/v1/contracts/{{contract_address}}/asset
 ```
 
 <!-- Retrieve NFT minting info -->
-
 {% api-method method="get" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/assets" %}
 {% api-method-summary %}
 Retrieve NFT minting info
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to get necessary information of NFT minted
+This endpoint allows you to get necessary information of minted NFT
+
+- `QUEUING` means that NFT is queueing for the upload and the transaction is not emitted.
+- `PENDING` means that NFT is ready to be on blockchain, the transaction is sent and being verified.
+- `SUCCESS` means that NFT has been successfully minted, the transaction can be found on block explore (e.g. `etherscan.io`).
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -222,10 +228,6 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
-{% api-method-parameter name="Content-Type" type="string" required=false %}
-`application/json`
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="Authorization" type="string" required=true %}
 `ApiKey {{api_key}}`
 \(where`api_key` provided by Lootex support\)
