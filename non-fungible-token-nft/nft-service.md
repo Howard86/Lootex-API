@@ -401,8 +401,7 @@ NFT minting info is successfully retrieved.
             }
         }
     ],
-    "ok": true,
-    "total_count": 100
+    "ok": true
 }
 ```
 {% endapi-method-response-example %}
@@ -413,6 +412,12 @@ NFT minting info is successfully retrieved.
 ### Example Request \(cURL\)
 
 ```text
-curl --location --request GET "{{host}}/v1/contracts/{{contract_address}}/assets?limit=1" \
---header "Authorization: ApiKey {{api_key}}"
+curl --location --request PUT "{{endpoint}}/v1/assets/{{contract_address}}/{{token_id}}" \
+--header "Content-Type: application/json" \
+--header "Authorization: ApiKey {{api_key}}" \
+--data "{
+    \"attributes_map\": {
+        \"Rarity\": epic,
+    }
+}"
 ```
