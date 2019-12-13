@@ -5,18 +5,19 @@ description: This page describes how you can manage your organization NFTs with 
 # NFT service
 
 {% hint style="warning" %}
-**Batch Mint NFTs** and **Synchronize NFT Properties** will cost ETH, please carefully monitor your organization Ethereum balance before proceeding!  
-  
+**Batch Mint NFTs** and **Synchronize NFT Properties** will cost ETH, please carefully monitor your organization Ethereum balance before proceeding!
+
 Contact Lootex support for more details.
 {% endhint %}
 
+<!-- Bacth Mint NFTs -->
 {% api-method method="post" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/assets/batch" %}
 {% api-method-summary %}
 Batch Mint NFTs
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to mint and send NFT to provided Ehtereum Address  
+This endpoint allows you to mint and send NFT to provided Ehtereum Address
 \(This will cost ETH!\)
 {% endapi-method-description %}
 
@@ -33,8 +34,8 @@ Ethereum **address** of NFT smart contract
 `application/json`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="ApiKey" type="string" required=true %}
-`ApiKey {{api_key}}`  
+{% api-method-parameter name="Authorization" type="string" required=true %}
+`ApiKey {{api_key}}`
 \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
@@ -168,7 +169,7 @@ Minting NFT request is successfully retrieved and ready to go on blockchain
 ### Example Request \(cURL\)
 
 ```text
-curl --location --request POST "{{endpoint}}/v1/contracts/{{contract_address}}/assets/batch" \
+curl --location --request POST "{{host}}/v1/contracts/{{contract_address}}/assets/batch" \
 --header "Content-Type: application/json" \
 --header "Authorization: ApiKey {{api_key}}" \
 --data "{
@@ -201,5 +202,113 @@ curl --location --request POST "{{endpoint}}/v1/contracts/{{contract_address}}/a
 }"
 ```
 
+<!-- Retrieve NFT minting info -->
 
+{% api-method method="get" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/assets" %}
+{% api-method-summary %}
+Retrieve NFT minting info
+{% endapi-method-summary %}
 
+{% api-method-description %}
+This endpoint allows you to get necessary information of NFT minted
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="contract\_address" type="string" required=true %}
+Ethereum **address** of NFT smart contract
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=false %}
+`application/json`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Authorization" type="string" required=true %}
+`ApiKey {{api_key}}`
+\(where`api_key` provided by Lootex support\)
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-query-parameters %}
+{% api-method-parameter name="limit" type="integer" required=false %}
+Number of NFT assets retrieved (Default: `100000`)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="status" type="string" required=false %}
+`QUEUEING`, `PENDING` or `SUCCESS`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="token_id_before" type="integer" required=false %}
+Retrieving assets before specific `token_id`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="token_id_after" type="integer" required=false %}
+Retrieving assets after specific `token_id`
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+NFT minting info is successfully retrieved.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "assets": [
+        {
+            "name": "Privileged Explorer",
+            "description": "非常早期的數位收藏品探險家，您有澄澈的眼和勇敢的心，往往能夠在大眾尚未看透趨勢時，就不畏質疑採取行動。這是一個全世界只有 100 個的限量徽章，此徽章代表您已經準備好開啟一段壯遊，探索一個鏈接真實的虛擬世界，挖掘尚未被發現的奇珍異寶。\n\n（#100 out of 100）",
+            "external_url": "https://dex.lootex.dev",
+            "image_url": "https://storage.googleapis.com/lootex-static/MeetTaipei/privileged-explorer.png",
+            "background_color": "eeeeee",
+            "contract_address": "0xdbba35892f7bf059c65279c0eebd05d9bb00af1f",
+            "owner_address": "0x44bc1e612e11d0acd2c43218ea55717ac28e3a40",
+            "token_id": 100,
+            "attributes": [
+                {
+                    "trait_type": "ID Number",
+                    "display_type": "number",
+                    "is_onchain": false,
+                    "value": 100
+                },
+                {
+                    "trait_type": "Rarity",
+                    "display_type": "string",
+                    "is_onchain": false,
+                    "value": "epic"
+                },
+                {
+                    "trait_type": "Issue Date",
+                    "display_type": "string",
+                    "is_onchain": false,
+                    "value": "Nov. 16, 2019"
+                }
+            ],
+            "tx": {
+                "id": 3157,
+                "hash": "0xcc5ea30f82bb3b5c77ecc673b1d87e964bf655cbfdd25145627e41f162a55419",
+                "data": "0xd3fc986400000000000000000000000044bc1e612e11d0acd2c43218ea55717ac28e3a4000000000000000000000000000000000000000000000000000000000000000640000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000005568747470733a2f2f6170692e666f7267652e6c6f6f7465782e6465762f76312f6173736574732f3078646242413335383932463742463035396336353237394330454562643035443962623030616631662f3130300000000000000000000000",
+                "status": "SUCCESS"
+            }
+        }
+    ],
+    "ok": true,
+    "total_count": 100
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+### Example Request \(cURL\)
+
+```text
+curl --location --request GET "{{host}}/v1/contracts/{{contract_address}}/assets?limit=1" \
+--header "Authorization: ApiKey {{api_key}}"
+```
