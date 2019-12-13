@@ -10,15 +10,13 @@ description: This page describes how you can manage your organization NFTs with 
 Contact Lootex support for more details.
 {% endhint %}
 
-<!-- Bacth Mint NFTs -->
 {% api-method method="post" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/assets/batch" %}
 {% api-method-summary %}
 Batch Mint NFTs
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to mint and send NFT to provided Ehtereum Address
-\(This will cost ETH!\)
+This endpoint allows you to mint and send NFT to provided Ehtereum Address \(This will cost ETH!\)
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -35,8 +33,7 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -58,18 +55,18 @@ Name of NFT \(single line\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="description" type="string" required=true %}
-Description of NFT, supporting line  breaks
+Description of NFT, supporting line breaks
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="image\_url" type="string" required=true %}
 Valid image url of NFT
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="background_color" type="string" required=true %}
+{% api-method-parameter name="background\_color" type="string" required=true %}
 6-digit color code \(e.g. FFFFFF\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="attributes_map" type="object" required=true %}
+{% api-method-parameter name="attributes\_map" type="object" required=true %}
 Property of minting NFT
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -81,7 +78,7 @@ Property of minting NFT
 Minting NFT request is successfully retrieved and ready to go on blockchain
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "assets": [
         {
@@ -169,7 +166,7 @@ Minting NFT request is successfully retrieved and ready to go on blockchain
 `attribute_map` varies from different NFT smart contract, please contact Lootex support for your specific format
 {% endhint %}
 
-### Example Request \(cURL\)
+## Example Request \(cURL\)
 
 ```text
 curl --location --request POST "{{host}}/v1/contracts/{{contract_address}}/assets/batch" \
@@ -177,35 +174,34 @@ curl --location --request POST "{{host}}/v1/contracts/{{contract_address}}/asset
 --header "Authorization: ApiKey {{api_key}}" \
 --data "{
     \"assets\": [
-    	{
-	        \"to_address\": \"0x312ee068322071030A4Ce5fB197d3179d0e24889\",
-	        \"name\": \"Privileged Explorer\",
-	        \"description\": \"非常早期的數位收藏品探險家，您有澄澈的眼和勇敢的心，往往能夠在大眾尚未看透趨勢時，就不畏質疑採取行動。這是一個全世界只有 100 個的限量徽章，此徽章代表您已經準備好開啟一段壯遊，探索一個鏈接真實的虛擬世界，挖掘尚未被發現的奇珍異寶。\\n\\n（#13 out of 100）",
-	        \"image_url\": \"https://storage.googleapis.com/lootex-static/MeetTaipei/privileged-explorer.png\",
-	        \"background_color\": \"eeeeee\",
-	        \"attributes_map\": {
-	            \"ID Number\": \"13\",
-	            \"Rarity\": \"epic\",
-	            \"Issue Date\": \"Nov. 14, 2019\"
-	        }
-    	},
-    	{
-	        \"to_address\": \"0x9478E2C334B4D3d0C8ACa26CE22809816d227236\",
-	        \"name\": \"Privileged Explorer\",
-	        \"description\": \"非常早期的數位收藏品探險家，您有澄澈的眼和勇敢的心，往往能夠在大眾尚未看透趨勢時，就不畏質疑採取行動。這是一個全世界只有 100 個的限量徽章，此徽章代表您已經準備好開啟一段壯遊，探索一個鏈接真實的虛擬世界，挖掘尚未被發現的奇珍異寶。\\n\\n（#17 out of 100）",
-	        \"image_url\": \"https://storage.googleapis.com/lootex-static/MeetTaipei/privileged-explorer.png\",
-	        \"background_color\": \"eeeeee\",
-	        \"attributes_map\": {
-	            \"ID Number\": \"17\",
-	            \"Rarity\": \"epic\",
-	            \"Issue Date\": \"Nov. 14, 2019\"
-	        }
-    	}
-	]
+        {
+            \"to_address\": \"0x312ee068322071030A4Ce5fB197d3179d0e24889\",
+            \"name\": \"Privileged Explorer\",
+            \"description\": \"非常早期的數位收藏品探險家，您有澄澈的眼和勇敢的心，往往能夠在大眾尚未看透趨勢時，就不畏質疑採取行動。這是一個全世界只有 100 個的限量徽章，此徽章代表您已經準備好開啟一段壯遊，探索一個鏈接真實的虛擬世界，挖掘尚未被發現的奇珍異寶。\\n\\n（#13 out of 100）",
+            \"image_url\": \"https://storage.googleapis.com/lootex-static/MeetTaipei/privileged-explorer.png\",
+            \"background_color\": \"eeeeee\",
+            \"attributes_map\": {
+                \"ID Number\": \"13\",
+                \"Rarity\": \"epic\",
+                \"Issue Date\": \"Nov. 14, 2019\"
+            }
+        },
+        {
+            \"to_address\": \"0x9478E2C334B4D3d0C8ACa26CE22809816d227236\",
+            \"name\": \"Privileged Explorer\",
+            \"description\": \"非常早期的數位收藏品探險家，您有澄澈的眼和勇敢的心，往往能夠在大眾尚未看透趨勢時，就不畏質疑採取行動。這是一個全世界只有 100 個的限量徽章，此徽章代表您已經準備好開啟一段壯遊，探索一個鏈接真實的虛擬世界，挖掘尚未被發現的奇珍異寶。\\n\\n（#17 out of 100）",
+            \"image_url\": \"https://storage.googleapis.com/lootex-static/MeetTaipei/privileged-explorer.png\",
+            \"background_color\": \"eeeeee\",
+            \"attributes_map\": {
+                \"ID Number\": \"17\",
+                \"Rarity\": \"epic\",
+                \"Issue Date\": \"Nov. 14, 2019\"
+            }
+        }
+    ]
 }"
 ```
 
-<!-- Retrieve NFT minting info -->
 {% api-method method="get" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/assets" %}
 {% api-method-summary %}
 Retrieve NFT minting info
@@ -213,10 +209,6 @@ Retrieve NFT minting info
 
 {% api-method-description %}
 This endpoint allows you to get necessary information of minted NFT
-
-- `QUEUING` means that NFT is queueing for the upload and the transaction is not emitted.
-- `PENDING` means that NFT is ready to be on blockchain, the transaction is sent and being verified.
-- `SUCCESS` means that NFT has been successfully minted, the transaction can be found on block explore (e.g. `etherscan.io`).
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -229,25 +221,24 @@ Ethereum **address** of NFT smart contract
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="limit" type="integer" required=false %}
-Number of NFT assets retrieved (Default: `100000`)
+Number of NFT assets retrieved \(Default: `100000`\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="status" type="string" required=false %}
 `QUEUEING`, `PENDING` or `SUCCESS`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="token_id_before" type="integer" required=false %}
+{% api-method-parameter name="token\_id\_before" type="integer" required=false %}
 Retrieving assets before specific `token_id`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="token_id_after" type="integer" required=false %}
+{% api-method-parameter name="token\_id\_after" type="integer" required=false %}
 Retrieving assets after specific `token_id`
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
@@ -259,7 +250,7 @@ Retrieving assets after specific `token_id`
 NFT minting info is successfully retrieved.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "assets": [
         {
@@ -308,14 +299,13 @@ NFT minting info is successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Example Request \(cURL\)
+## Example Request \(cURL\)
 
 ```text
 curl --location --request GET "{{host}}/v1/contracts/{{contract_address}}/assets?limit=1" \
 --header "Authorization: ApiKey {{api_key}}"
 ```
 
-<!-- Update NFT Properties -->
 {% api-method method="put" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/:token\_id" %}
 {% api-method-summary %}
 Update NFT Properties
@@ -343,8 +333,7 @@ Token ID of updated NFT
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -361,7 +350,7 @@ Property of minting NFT
 NFT properties have been successfully updated.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "assets": [
         {
@@ -409,7 +398,7 @@ NFT properties have been successfully updated.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Example Request \(cURL\)
+## Example Request \(cURL\)
 
 ```text
 curl --location --request PUT "{{endpoint}}/v1/assets/{{contract_address}}/{{token_id}}" \
@@ -422,15 +411,13 @@ curl --location --request PUT "{{endpoint}}/v1/assets/{{contract_address}}/{{tok
 }"
 ```
 
-<!-- Synchronize NFT Properties -->
 {% api-method method="put" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/txs" %}
 {% api-method-summary %}
 Synchronize NFT Properties
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to update NFT properties, synchronizing on-chain and off-chain data.
-\(This will cost ETH!\)
+This endpoint allows you to update NFT properties, synchronizing on-chain and off-chain data. \(This will cost ETH!\)
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -447,8 +434,7 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -469,7 +455,7 @@ Ethereum **address** of NFT smart contract
 NFT minting info is successfully retrieved.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
   "data": [],
   "ok": true,
@@ -481,14 +467,15 @@ NFT minting info is successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Example Request \(cURL\)
+## Example Request \(cURL\)
 
 ```text
 curl --location --request POST "{{endpoint}}/v1/contracts/{{contract_address}}/txs" \
 --header "Content-Type: application/json" \
 --header "Authorization: ApiKey {{api_key}}" \
 --data "{
-	\"action\": \"SYNCHRONIZE\",
-	\"payload\": {}
+    \"action\": \"SYNCHRONIZE\",
+    \"payload\": {}
 }"
 ```
+
