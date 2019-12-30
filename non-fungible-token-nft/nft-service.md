@@ -5,7 +5,7 @@ description: This page describes how you can manage your organization NFTs with 
 # NFT service
 
 {% hint style="warning" %}
-**Batch Mint NFTs** and **Synchronize NFT Properties** will cost ETH, please carefully monitor your organization Ethereum balance before proceeding!
+**Batch Mint NFTs** and **Synchronize NFT Properties** will cost ETH, please carefully monitor Ethereum balance of your organization before proceeding!
 
 Contact Lootex support for more details.
 {% endhint %}
