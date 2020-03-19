@@ -58,7 +58,7 @@ Whether to put token metadata to IPFS or not
 must have following keys `to_address, name, description, image_url, background_color`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="user\_ipfs" type="boolean" required=false %}
+{% api-method-parameter name="use\_ipfs" type="boolean" required=false %}
 enables [ipfs](https://ipfs.io/) to store large data, default: `false`
 {% endapi-method-parameter %}
 
@@ -87,7 +87,7 @@ Property of minting NFT
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="use\_ipfs" type="boolean" %}
-(Deprecated) Whether to put token metadata to IPFS or not
+\(Deprecated\) Store token metadata on IPFS
 {% endapi-method-parameter %}
 
 {% endapi-method-body-parameters %}
@@ -196,6 +196,9 @@ curl --location --request POST "{{host}}/v1/contracts/{{contract_address}}/asset
 --header "Content-Type: application/json" \
 --header "Authorization: ApiKey {{api_key}}" \
 --data "{
+    \"meta\": {
+        "use_ipfs": false
+    },
     \"assets\": [
         {
             \"to_address\": \"0x312ee068322071030A4Ce5fB197d3179d0e24889\",
