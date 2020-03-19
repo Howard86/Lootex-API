@@ -41,6 +41,15 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
+{% api-method-parameter name="metadata" type="object" %}
+may contain following keys `use_ipfs`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="use\_ipfs" type="boolean" %}
+Whether to put token metadata to IPFS or not
+{% endapi-method-parameter %}
+
+{% api-method-body-parameters %}
 {% api-method-parameter name="assets" type="array" required=true %}
 `asset_object`
 {% endapi-method-parameter %}
@@ -76,6 +85,11 @@ Valid image url of NFT
 {% api-method-parameter name="attributes\_map" type="object" required=true %}
 Property of minting NFT
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="use\_ipfs" type="boolean" %}
+(Deprecated) Whether to put token metadata to IPFS or not
+{% endapi-method-parameter %}
+
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -97,6 +111,7 @@ Minting NFT request is successfully retrieved and ready to go on blockchain
             "contract_address": "0xdbba35892f7bf059c65279c0eebd05d9bb00af1f",
             "owner_address": "0x9478e2c334b4d3d0c8aca26ce22809816d227236",
             "token_id": 17,
+            "token_uri": "https://api.rinkeby.forge.lootex.dev/v1/assets/0xdbba35892f7bf059c65279c0eebd05d9bb00af1f/17",
             "attributes": [
                 {
                     "trait_type": "ID Number",
@@ -133,6 +148,7 @@ Minting NFT request is successfully retrieved and ready to go on blockchain
             "contract_address": "0xdbba35892f7bf059c65279c0eebd05d9bb00af1f",
             "owner_address": "0x312ee068322071030a4ce5fb197d3179d0e24889",
             "token_id": 13,
+            "token_uri": "https://api.rinkeby.forge.lootex.dev/v1/assets/0xdbba35892f7bf059c65279c0eebd05d9bb00af1f/13",
             "attributes": [
                 {
                     "trait_type": "ID Number",
@@ -271,6 +287,7 @@ NFT minting info is successfully retrieved.
             "contract_address": "0xdbba35892f7bf059c65279c0eebd05d9bb00af1f",
             "owner_address": "0x44bc1e612e11d0acd2c43218ea55717ac28e3a40",
             "token_id": 100,
+            "token_uri": "https://api.rinkeby.forge.lootex.dev/v1/assets/0xdbba35892f7bf059c65279c0eebd05d9bb00af1f/100",
             "attributes": [
                 {
                     "trait_type": "ID Number",
@@ -372,6 +389,7 @@ NFT properties have been successfully updated.
             "contract_address": "0xdbba35892f7bf059c65279c0eebd05d9bb00af1f",
             "owner_address": "0x44bc1e612e11d0acd2c43218ea55717ac28e3a40",
             "token_id": 100,
+            "token_uri": "https://api.rinkeby.forge.lootex.dev/v1/assets/0xdbba35892f7bf059c65279c0eebd05d9bb00af1f/100",
             "attributes": [
                 {
                     "trait_type": "ID Number",
