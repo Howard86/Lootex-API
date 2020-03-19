@@ -41,15 +41,15 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="metadata" type="object" %}
-may contain following keys `use_ipfs`
+
+{% api-method-parameter name="metadata" type="object" required=false %}
+can include following keys `use_ipfs`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="use\_ipfs" type="boolean" %}
-Whether to put token metadata to IPFS or not
+{% api-method-parameter name="use\_ipfs" type="boolean" required=false %}
+enables ipfs to store large data, default: `false`
 {% endapi-method-parameter %}
 
-{% api-method-body-parameters %}
 {% api-method-parameter name="assets" type="array" required=true %}
 `asset_object`
 {% endapi-method-parameter %}
@@ -59,7 +59,7 @@ must have following keys `to_address, name, description, image_url, background_c
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="use\_ipfs" type="boolean" required=false %}
-enables [ipfs](https://ipfs.io/) to store large data, default: `false`
+\(Deprecated\)enables ipfs to store large data, default: `false`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="to\_address" type="string" required=true %}
