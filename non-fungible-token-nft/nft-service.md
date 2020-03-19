@@ -46,6 +46,10 @@ Ethereum **address** of NFT smart contract
 can include following keys `use_ipfs`
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="use\_ipfs" type="boolean" required=false %}
+enables ipfs to store large data, default: `false`
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="assets" type="array" required=true %}
 `asset_object`
 {% endapi-method-parameter %}
