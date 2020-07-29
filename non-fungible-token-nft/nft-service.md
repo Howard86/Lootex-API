@@ -5,9 +5,7 @@ description: This page describes how you can manage your organization NFTs with 
 # NFT service
 
 {% hint style="warning" %}
-**Batch Mint NFTs** and **Synchronize NFT Properties** will cost ETH, please carefully monitor Ethereum balance of your organization before proceeding!
-
-Contact Lootex support for more details.
+**Mint NFTs** will cost ETH, please carefully monitor Ethereum balance of your organization before proceeding! Please contact Lootex support for more details.
 {% endhint %}
 
 {% api-method method="post" host="https://api.forge.lootex.dev" path="/v1/contracts/:contract\_address/assets/batch" %}
@@ -16,9 +14,7 @@ Batch Mint NFTs
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to mint and send NFT to provided Ehtereum Address
-
-**\(This will cost ETH!\)**
+This endpoint allows you to mint and send NFT to provided Ethereum Address**\(This will cost ETH!\)**
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -35,13 +31,11 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-
 {% api-method-parameter name="metadata" type="object" required=false %}
 can include following keys `use_ipfs`
 {% endapi-method-parameter %}
@@ -89,7 +83,6 @@ Property of minting NFT
 {% api-method-parameter name="use\_ipfs" type="boolean" %}
 \(Deprecated\) Store token metadata on IPFS
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -247,15 +240,13 @@ Ethereum **address** of NFT smart contract
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="limit" type="integer" required=false %}
-Number of NFT assets retrieved
-\(Default: `100000`\)
+Number of NFT assets retrieved \(Default: `100000`\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="status" type="string" required=false %}
@@ -362,8 +353,7 @@ Token ID of updated NFT
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -448,9 +438,7 @@ Synchronize NFT Properties
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to update NFT properties, synchronizing on-chain and off-chain data.
-
-**\(This will cost ETH!\)**
+This endpoint allows you to update NFT properties, synchronizing on-chain and off-chain data.**\(This will cost ETH!\)**
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -467,8 +455,7 @@ Ethereum **address** of NFT smart contract
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Authorization" type="string" required=true %}
-`ApiKey {{api_key}}`
-\(where`api_key` provided by Lootex support\)
+`ApiKey {{api_key}}` \(where`api_key` provided by Lootex support\)
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -512,3 +499,4 @@ curl --location --request POST "{{endpoint}}/v1/contracts/{{contract_address}}/t
     \"payload\": {}
 }"
 ```
+
