@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Lootex-API](README.md)
+* [Lootex Developer Portal](README.md)
 
 ## Non-Fungible Token \(NFT\)
 
