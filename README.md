@@ -20,7 +20,7 @@ We love creativeness and all fun ideas. Welcome to share them with us! Let us he
 
 Lootex’s Forge enables developers to create cryptoitems or find items to support their games. More importantly, Marketplace connects players and developers to a larger community. All these make the ecosystem energetic and ever-advancing. Let's see how Forge API works:
 
-{% page-ref page="non-fungible-token-nft/nft-service/" %}
+{% page-ref page="documentation/nft-service/" %}
 
 
 
