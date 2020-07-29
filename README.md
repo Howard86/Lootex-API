@@ -24,9 +24,5 @@ We help game developers, celebrities, artists and illustrators submit their limi
 
 We love creativeness and all fun ideas. Welcome to share them with us! Let us help you transform your digital assets real. If you are a collector, here’s your oasis. Go hunt and find your hidden gems. Feel free to buy or sell your collectibles, or even show off your treasures. Enjoy the surprises it may bring.
 
-Lootex’s Forge enables developers to create cryptoitems or find items to support their games. More importantly, Marketplace connects players and developers to a larger community. All these make the ecosystem energetic and ever-advancing. Let's see how Forge API works:
-
-{% page-ref page="documentation/nft-service/" %}
-
-
+Lootex’s Forge enables developers to create cryptoitems or find items to support their games. More importantly, Marketplace connects players and developers to a larger community. All these make the ecosystem energetic and ever-advancing. Let's begin and see how Forge API works:
 
