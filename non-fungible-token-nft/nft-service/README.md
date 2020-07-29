@@ -2,7 +2,7 @@
 description: This page describes how you can manage your organization NFTs with Lootex API.
 ---
 
-# NFT service
+# Forge NFT Services - API Documentation
 
 {% hint style="warning" %}
 **Mint NFTs** will cost ETH, please carefully monitor Ethereum balance of your organization before proceeding! Please contact Lootex support for more details.

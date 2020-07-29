@@ -4,6 +4,6 @@
 
 ## Non-Fungible Token \(NFT\)
 
-* [NFT service](non-fungible-token-nft/nft-service/README.md)
+* [Forge NFT Services - API Documentation](non-fungible-token-nft/nft-service/README.md)
   * [Deprecated](non-fungible-token-nft/nft-service/deprecated.md)
 
