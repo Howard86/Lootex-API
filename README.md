@@ -1,4 +1,8 @@
 # Lootex Developer Portal
 
-API documentation to interact with service of lootex.iox
+
+
+{% page-ref page="non-fungible-token-nft/nft-service/" %}
+
+
 
