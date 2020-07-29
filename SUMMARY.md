@@ -4,6 +4,6 @@
 
 ## Documentation
 
-* [Forge NFT Services - API Documentation](documentation/nft-service/README.md)
+* [Forge NFT Services - API](documentation/nft-service/README.md)
   * [Deprecated](documentation/nft-service/deprecated.md)
 
