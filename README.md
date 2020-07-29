@@ -1,3 +1,9 @@
+---
+description: >-
+  Our mission is to make people’s virtual assets real by providing a trading
+  platform built on the blockchain.
+---
+
 # Lootex Developer Portal
 
 ### What is Lootex?
